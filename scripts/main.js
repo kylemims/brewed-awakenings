@@ -18,8 +18,10 @@ const applicationHTML = `
 </article>
 
 <article class="orders">
-    <h2>Orders</h2>
-    ${Orders()}
+    <section class="detail--column-2 list details__orders">
+        <h2>Orders</h2>
+        ${Orders()}
+    </section>
 </article>
 `
 

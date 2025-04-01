@@ -1,0 +1,44 @@
+Table employee {
+  id int [pk]
+  name varchar
+  email varchar
+  hourlyRate decimal
+}
+
+Table location {
+  id int [pk]
+  name varchar
+  address varchar
+}
+
+Table product {
+  id int [pk]
+  name varchar
+  price decimal
+}
+
+Table customer {
+  id int [pk]
+  name varchar
+  creditCard varchar
+  price decimal
+}
+
+Table review {
+    id int [pk]
+    customerId int
+    productId int
+
+}
+
+Table employee_location {
+  id int [pk]
+  employeeId int [ref: > employee.id]
+  locationId int [ref: > location.id]
+}
+
+Table product_location {
+  id int [pk]
+  productId int [ref: > employee.id]
+  locationId int [ref: > location.id]
+}

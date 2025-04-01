@@ -1,17 +1,24 @@
 .details {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .detail--column {
-    flex-basis: 24%;
-    margin: 0 2rem;
-    padding: 1rem;
+    flex-basis: 25%;
+    margin: 20px;
+    padding: 20px;
     border: 1px dotted goldenrod;
 }
 
+.detail--column-2 {
+    flex-basis: 25%;
+    margin: 10px;
+    padding: 20px;
+    border: none;
+}
+
 .orders {
-    font-size: 20rem;
+    font-size: 20px;
 }
 

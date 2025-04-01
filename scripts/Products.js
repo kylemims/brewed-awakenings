@@ -3,14 +3,28 @@ import { getProducts } from "./database.js"
 const products = getProducts()
 
 export const Products = () => {
-    let html = "<ul>"
+    let productsHTML = "<ul>"
 
     for (const product of products) {
-        html += `<li>${product.title}</li>`
+        productsHTML += `<li data-price="${product.price}"
+                            data-name="${product.name}"
+                            data-producttype="product">
+                            ${product.name}</li>`
     }
 
-    html += "</ul>"
+    productsHTML += "</ul>"
 
-    return html
+    return productsHTML
 }
 
+
+document.addEventListener(
+    "click", 
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+
+    if (itemClicked.dataset.producttype === "product") {
+        
+        window.alert(`The price of ${itemClicked.dataset.name} is $${itemClicked.dataset.price}`)
+    }
+})

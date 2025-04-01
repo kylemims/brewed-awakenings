@@ -1,0 +1,62 @@
+Table locations {
+	id int [primary key]
+}
+
+Table products {
+    id int [primary key]
+    name varchar
+    price decimal
+    locationId int
+}
+
+Table orders {
+    id int [primary key]
+    locationId int
+    customerId int
+    creditcardId int
+	productId int
+    employeeId int
+}
+
+Table employees {
+    id int [primary key]
+    name varchar
+    email varchar
+    hourlyRate int
+}
+
+Table customers {
+    id int [primary key]
+    name varchar
+    creditCard varchar
+}
+
+Table reviews {
+    id int [primary key]
+    customerId int
+    productId int
+    rating int
+    recommendation text
+}
+
+Table product_locations {
+    id int [primary key]
+    productId int
+    locationId int
+}
+ 
+Table employee_locations {
+  id int [primary key]
+  employeeId int
+  locationId int
+}
+
+Ref: orders.productId > products.id
+Ref: orders.employeeId > employees.id
+Ref: orders.customerId > customers.id
+Ref: product_locations.productId > products.id
+Ref: product_locations.locationId > locations.id
+Ref: employee_locations.employeeId > employees.id
+Ref: employee_locations.locationId > locations.id
+Ref: reviews.customerId > customers.id
+Ref: reviews.productId > products.id
